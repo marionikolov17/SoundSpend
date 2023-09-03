@@ -9,8 +9,10 @@ const partyRouter = require("./routes/partyRoutes");
 const app = express();
 
 // MIDDLEWARES
-
-app.use(morgan('dev'));
+//console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === "development") {
+    app.use(morgan('dev'));
+}
 app.use(express.json());
 
 
